@@ -1,11 +1,26 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { ActivityIndicator, Image, StyleSheet } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
+import { useQuery } from 'convex/react';
+import { api } from '@/convex/_generated/api';
 import { ThemedView } from '@/components/ThemedView';
+import React from 'react';
+import ListItem from '@/components/ListItem';
+import Ionicons from "@expo/vector-icons/Ionicons";
+import Button from "@/components/Button";
+import { router } from 'expo-router';
 
 export default function HomeScreen() {
+  const start = new Date()
+  start.setHours(0,0,0,0)
+  const end = new Date()
+  end.setHours(23, 59, 59, 999)
+
+  const workouts = useQuery(api.workouts.listWithReps, {
+    start: start.getTime(),
+    end: end.getTime()
+  });
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -15,37 +30,22 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
+        {!workouts ? <ActivityIndicator size="large" /> : (
+          <>
+          <Button onPress={() => router.push("/new-workout")}>
+            <Ionicons size={16} name="add-outline" /> New workout
+          </Button>
+          {workouts.map(({ _id, name, currentReps, targetReps }) => (
+            <ListItem key={_id} onPress={() => router.push(`/log-reps/${_id}`)}>
+              { name } ({currentReps ?? 0}/{targetReps})
+            </ListItem>
+          ))}
+          </>
+        )}
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
+
     </ParallaxScrollView>
   );
 }
