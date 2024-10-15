@@ -1,50 +1,21 @@
-# Welcome to your Expo app 👋
+# Daily Reps 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Daily Reps is a day-to-day workout tracker that allows users to track the combined number of reps that one performs on a given day, resetting the logged reps for the following day.
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This repository is the sample covered in the [**Build a daily workout tracker with Clerk, Convex, and Expo**](https://expo.dev/blog/build-a-daily-workout-tracker-with-clerk-convex-and-expo) on the Expo blog.
 
 ## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
+To learn how to build Daily Reps yourself, a detailed explaination of each component, service, and how they interact can be found in [the blog post](https://expo.dev/blog/build-a-daily-workout-tracker-with-clerk-convex-and-expo). Otherwise feel free to explore this repository as your convenience.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Tools used
 
-## Join the community
+- [**Expo**](https://expo.dev/) is a platform that helps facilitate the development of React Native applications by providing an ecosystem of tools to help with tasks like building and testing the project, updating your applications, and submitting to the various app stores.
+- [**Clerk**](https://clerk.com/) is a user management platform designed to help developers add authentication into their applications as quickly as possible.
+- [**Convex**](https://www.convex.dev/) is an open-source all inclusive backend service that combines concepts like API, database, and server functions.
 
-Join our community of developers creating universal apps.
+## Support
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+If you need any support building this project, feel free to contact the author directly on X:
+
+- [Brian Morrison II (@brianmmdev)](https://x.com/brianmmdev)
