@@ -31,6 +31,7 @@ export default function AuthRoutesLayout() {
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'person' : 'person-outline'} color={color} />
           ),
+          headerShown: false,
         }}
       />
       <Tabs.Screen
@@ -40,6 +41,7 @@ export default function AuthRoutesLayout() {
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'person-add' : 'person-add-outline'} color={color} />
           ),
+          headerShown: false
         }}
       />
     </Tabs>

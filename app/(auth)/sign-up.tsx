@@ -86,12 +86,6 @@ export default function SignUpScreen() {
                   Google
                 </OAuthButton>
               </View>
-              <View style={{ flex: 1 }}>
-                <OAuthButton strategy="oauth_github">
-                  <MaterialCommunityIcons name="github" size={18} />{" "}
-                  GitHub
-                </OAuthButton>
-              </View>
             </View>
 
             <View style={{flexDirection: 'row', alignItems: 'center'}}>

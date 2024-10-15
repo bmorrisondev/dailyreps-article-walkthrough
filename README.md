@@ -11,7 +11,7 @@ To learn how to build Daily Reps yourself, a detailed explaination of each compo
 ## Tools used
 
 - [**Expo**](https://expo.dev/) is a platform that helps facilitate the development of React Native applications by providing an ecosystem of tools to help with tasks like building and testing the project, updating your applications, and submitting to the various app stores.
-- [**Clerk**](https://clerk.com/) is a user management platform designed to help developers add authentication into their applications as quickly as possible.
+- [**Clerk**](https://go.clerk.com/ETd9ofq) is a user management platform designed to help developers add authentication into their applications as quickly as possible.
 - [**Convex**](https://www.convex.dev/) is an open-source all inclusive backend service that combines concepts like API, database, and server functions.
 
 ## Support
